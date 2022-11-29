@@ -1,24 +1,4 @@
-# full_stack_crud
+#vue-laravel-crud-rest-api
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This is a SPA built with vue js implementing previously created laravel rest api which I developed. This is a simple crud application with image upload obviously.
+I have used AXIOS to build promises in this application.
