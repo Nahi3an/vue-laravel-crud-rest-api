@@ -2,7 +2,8 @@
     <div class="container mt-3">
 
         <h5>Skills List</h5>
-
+        <!-- <h5>{{ this.$store.getters.appName }}</h5> -->
+        
         <h4 class="text-center text-success"> {{ msg }} </h4>
         
        <table class="table table-hover ">
@@ -79,9 +80,6 @@ export default{
         .then(response => {
 
             this.skills = response.data.data;
-           
-            
-
         }).catch(error => {
 
             console.log(error);
@@ -105,7 +103,7 @@ export default{
                 console.log(error);
             })
 
-            console.log("Opps")
+          
         }
        
 
@@ -115,9 +113,9 @@ export default{
    },
    mounted(){
 
-     console.log('Contact List Componenet Mounted');
+     console.log('Skill List Componenet Mounted');
      this.msg = this.$route.params.msg;
-     console.log(this.msg);
+    
    }
 }
 </script>

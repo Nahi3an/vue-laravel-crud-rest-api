@@ -9,13 +9,29 @@
                       <div class="collapse navbar-collapse" id="navbarColor01">
                         <ul class="navbar-nav me-auto">
                           <li class="nav-item">
-                            <router-link class="nav-link active" to="/">Home
+                            <router-link class="nav-link " :to="{name:'Home'}">Home
                               <span class="visually-hidden">(current)</span>
                             </router-link>
                           </li>
-                          <li class="nav-item">
-                            <router-link class="nav-link" to="add-skill">Add Skills</router-link>
-                          </li>
+                          
+                          <div v-if="loggedIn">
+                            <li class="nav-item">
+                            <router-link class="nav-link" :to="{name:'AddSkill'}">Add Skills</router-link>
+                            </li>
+                          </div>
+                          <div v-if="loggedIn">
+                            
+                            <li class="nav-item">
+                            <router-link class="nav-link" :to="{name:'Logout'}">Logout</router-link>
+                            </li>
+                           
+                          </div>
+
+                          <div v-if="!loggedIn">
+                            <li class="nav-item">
+                            <router-link class="nav-link" :to="{name:'Login'}">Login</router-link>
+                            </li>
+                          </div>
                          
                           
                         </ul>
@@ -28,10 +44,18 @@
     
     <script>
     export default{
-    
-        name: 'Header',
-        props:{
-          title: String
+      name:'Header',
+      props:{ title:String},
+      computed:{
+        loggedIn(){
+
+          return this.$store.getters.loggedIn;
         }
+      },
+     
+     
+      
+
+      
     }
     </script>
